@@ -1,0 +1,3 @@
+= coderwall
+
+This is a plugin for Redmine that displays your coderwall achievements on My Page.
