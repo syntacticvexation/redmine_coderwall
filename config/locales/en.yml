@@ -1,6 +1,6 @@
 en:
   coderwall_box: Achievements
-  field_coderwall_alias: Coderwall username
+  field_coderwall_alias: Coderwall alias
   coderwall_alias_invalid_error: Coderwall alias invalid
   coderwall_alias_missing_error: Coderwall alias missing.  Set your alias in My account settings.
 
