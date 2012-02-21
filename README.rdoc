@@ -1,3 +1,14 @@
-= coderwall
+= Redmine Coderwall Plugin
 
-This is a plugin for Redmine that displays your coderwall achievements on My Page.
+This is a plugin for Redmine that displays your Coderwall achievements on My Page.
+
+== Installation
+
+Install bundler if not already installed - gem install bundler
+cp vendor/plugins/redmine_coderwall/Gemfile Gemfile 
+bundle install
+Run rake db:migrate_plugins
+
+== Usage
+
+Users can set their Coderwall username through <b>My account</b>. Click on <b>My page</b> -> <b>Personalize this page</b> to add the Coderwall My page block.
