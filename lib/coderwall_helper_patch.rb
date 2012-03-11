@@ -8,7 +8,7 @@ require_dependency 'my_helper'
 require "open-uri"
 require "json"
 
-module CoderwallMyHelperPatch
+module CoderwallHelperPatch
   def self.included(base) # :nodoc:
 #     base.send(:include, InstanceMethods)
   end
