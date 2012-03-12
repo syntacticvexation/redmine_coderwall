@@ -1,6 +1,6 @@
 = Redmine Coderwall Plugin
 
-This is a plugin for Redmine that displays your Coderwall achievements on My Page.
+This is a plugin for Redmine that displays your Coderwall achievements on My Page and user profile.
 
 == Installation
 
@@ -11,4 +11,4 @@ This is a plugin for Redmine that displays your Coderwall achievements on My Pag
 
 == Usage
 
-Users can set their Coderwall username through <b>My account</b>. Click on <b>My page</b> -> <b>Personalize this page</b> to add the Coderwall <b>My page</b> block.
+Users can set their Coderwall username through <b>My account</b>. Click on <b>My page</b> -> <b>Personalize this page</b> to add the Coderwall <b>My page</b> block.  They can also toggle whether to display their achievements on their user profile page.
