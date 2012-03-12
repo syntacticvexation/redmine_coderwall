@@ -25,6 +25,7 @@ Dispatcher.to_prepare :redmine_coderwall do
   require_dependency 'principal'
   require_dependency 'user'
   User.safe_attributes 'coderwall_alias'
+  User.safe_attributes 'coderwall_display_in_profile'
 end
 
 # initialize hook

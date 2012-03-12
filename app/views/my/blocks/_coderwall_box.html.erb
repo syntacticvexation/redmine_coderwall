@@ -1,14 +1,16 @@
-<h3><%= l('coderwall_box')%></h3>
+<% if controller.action_name == 'page' or @user.coderwall_display_in_profile? %>
+  <h3><%= l('coderwall_box')%></h3>
 
-<% if not @user.coderwall_alias.nil? %>
-  <% begin %>
-    <% achievements_of(@user.coderwall_alias).each do |a| %>
-      <%= image_tag(a.badge, :alt => a.name, :title => a.description, :height => 60, :width => 60) %>
+  <% if not @user.coderwall_alias.nil? %>
+    <% begin %>
+      <% achievements_of(@user.coderwall_alias).each do |a| %>
+	<%= image_tag(a.badge, :alt => a.name, :title => a.description, :height => 60, :width => 60) %>
+      <% end %>
+
+    <% rescue => e %>
+      <% flash[:error] = l('coderwall_alias_invalid_error') %>
     <% end %>
-
-  <% rescue => e %>
-    <% flash[:error] = l('coderwall_alias_invalid_error') %>
+  <% else %>
+    <% flash[:error] = l('coderwall_alias_missing_error') %>
   <% end %>
-<% else %>
-  <% flash[:error] = l('coderwall_alias_missing_error') %>
 <% end %>
