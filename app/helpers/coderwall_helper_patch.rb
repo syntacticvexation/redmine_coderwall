@@ -35,3 +35,8 @@ module CoderwallHelperPatch
     response["badges"].map { |badge| Achievement.new(badge) }
   end
 end
+
+# now we should include this module in ApplicationHelper module
+unless ApplicationHelper.included_modules.include? CoderwallHelperPatch
+    ApplicationHelper.send(:include, CoderwallHelperPatch)
+end
