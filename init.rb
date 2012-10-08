@@ -18,29 +18,12 @@ if Rails::VERSION::MAJOR >= 3
     require_dependency 'principal'
     require_dependency 'user'
 
-    unless MyHelper.included_modules.include?(CoderwallHelperPatch)
-      MyHelper.send(:include, CoderwallHelperPatch)
-    end
-    
-    unless User.included_modules.include?(CoderwallHelperPatch)
-      User.send(:include, CoderwallHelperPatch)
-    end
-
     User.safe_attributes 'coderwall_alias'
     User.safe_attributes 'coderwall_display_in_profile'
   end    
 else
   Dispatcher.to_prepare :redmine_coderwall do
     require_dependency 'application_helper'
-
-    unless MyHelper.included_modules.include?(CoderwallHelperPatch)
-      MyHelper.send(:include, CoderwallHelperPatch)
-    end
-    
-    unless UsersHelper.included_modules.include?(CoderwallHelperPatch)
-      UsersHelper.send(:include, CoderwallHelperPatch)
-    end
-
     require_dependency 'principal'
     require_dependency 'user'
     User.safe_attributes 'coderwall_alias'
