@@ -7,7 +7,7 @@ Redmine::Plugin.register :redmine_coderwall do
   name 'Redmine Coderwall plugin'
   author 'Syntactic Vexation'
   description 'This is a plugin for Redmine that displays your coderwall achievements on My Page and user profile'
-  version '0.2'
+  version '0.2.1'
   url 'https://github.com/syntacticvexation/redmine_coderwall'
 end
  
