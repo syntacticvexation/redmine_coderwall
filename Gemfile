@@ -1,2 +1,2 @@
 source "http://rubygems.org"
-gem "coderwall-ruby-api", "~> 0.0.4"
+gem "coderwall-ruby-api", "0.0.4"
