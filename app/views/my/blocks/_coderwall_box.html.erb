@@ -3,7 +3,7 @@
 
   <% if not @user.coderwall_alias.nil? %>
     <% begin %>
-      <% Coderwall::User.badges(@user.coderwall_alias).each do |a| %>
+      <% Coderwall::User.new(@user.coderwall_alias)['user']['badges'].each do |a| %>
 	<%= image_tag(a['badge'], :alt => a['name'], :title => a['description'], :height => 60, :width => 60) %>
       <% end %>
 
