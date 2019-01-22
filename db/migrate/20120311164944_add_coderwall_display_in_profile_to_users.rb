@@ -1,4 +1,4 @@
-class AddCoderwallDisplayInProfileToUsers < ActiveRecord::Migration
+class AddCoderwallDisplayInProfileToUsers < ActiveRecord::Migration[4.2]
   def self.up
     change_table :users do |t|
       t.boolean :coderwall_display_in_profile, :default => false

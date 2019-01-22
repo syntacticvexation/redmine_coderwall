@@ -1,35 +1,16 @@
 require 'redmine'
 
-# Including dispatcher.rb in case of Rails 2.x
-require 'dispatcher' unless Rails::VERSION::MAJOR >= 3
-
 Redmine::Plugin.register :redmine_coderwall do
   name 'Redmine Coderwall plugin'
   author 'Syntactic Vexation'
   description 'This is a plugin for Redmine that displays your coderwall achievements on My Page and user profile'
-  version '0.2.1'
+  version '0.3'
+  requires_redmine version_or_higher: '4.0'
   url 'https://github.com/syntacticvexation/redmine_coderwall'
 end
- 
-if Rails::VERSION::MAJOR >= 3
-  ActionDispatch::Callbacks.to_prepare do
-    require_dependency 'application_helper'
-    require_dependency 'project' # required for http://www.redmine.org/issues/11035
-    require_dependency 'principal'
-    require_dependency 'user'
 
-    User.safe_attributes 'coderwall_alias'
-    User.safe_attributes 'coderwall_display_in_profile'
-  end    
-else
-  Dispatcher.to_prepare :redmine_coderwall do
-    require_dependency 'application_helper'
-    require_dependency 'principal'
-    require_dependency 'user'
-    User.safe_attributes 'coderwall_alias'
-    User.safe_attributes 'coderwall_display_in_profile'
-  end
-end
+User.safe_attributes 'coderwall_alias'
+User.safe_attributes 'coderwall_display_in_profile'
 
 # initialize hook
 class CoderwallAliasSettingsHook < Redmine::Hook::ViewListener
